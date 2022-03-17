@@ -1,0 +1,73 @@
+<view class="page" data-weui-theme="{{theme}}">
+	<view class="page__hd">
+		<view class="page__title">山农速达</view>
+		<view class="page__desc">软件学院石头工作室志愿者，面向山西农业大学2020级新生，无偿代取快递。时间为10月9号以及10月10号！</view>
+	</view>
+	<view class="page__bd page__bd_spacing">
+		<view class="kind-list">
+			<block wx:for="{{list}}" wx:key="id">
+				<view class="kind-list__item">
+					<view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+						<view class="weui-flex__item">{{item.name}}</view>
+						<image class="kind-list__img" src="images/{{item.id}}.png"></image>
+					</view>
+					<view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+						<view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+							<block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
+								<navigator url="form/form?id={{item.pages[index]}}" class="weui-cell weui-cell_access">
+									<view class="weui-cell__bd">{{page}}</view>
+									<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+								</navigator>
+							</block>
+						</view>
+					</view>
+				</view>
+			</block>
+			<view class="kind-list__item">
+				<view class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="dingdan">
+					<view class="weui-flex__item">我的订单</view>
+					<image class="kind-list__img" src="images/dingdan.png"></image>
+				</view>
+				<view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+					<view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+						<block>
+							<navigator url="order/order" class="weui-cell weui-cell_access">
+								<view class="weui-cell__bd">111</view>
+								<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+							</navigator>
+						</block>
+					</view>
+				</view>
+			</view>
+			<view class="kind-list__item" wx:if="{{peisongyuan.QX==1}}">
+				<view class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="people">
+					<view class="weui-flex__item">配送员入口</view>
+					<image class="kind-list__img" src="images/people.png"></image>
+				</view>
+				<view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+					<view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+						<block>
+							<navigator url="order/order" class="weui-cell weui-cell_access">
+								<view class="weui-cell__bd"></view>
+								<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+							</navigator>
+						</block>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="page__ft">
+		<image src="images/icon_footer.png" style="width: 84px; height: 84px;"></image>
+	</view>
+</view>
+
+<view class="fadeIn" wx:if="{{iosDialog2}}">
+	<view class="weui-mask"></view>
+	<view class="weui-dialog">
+		<view class="weui-dialog__bd">弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内</view>
+		<view class="weui-dialog__ft">
+			<a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="close">知道了</a>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,122 @@
+ <van-tabs active="a" bind:change="onChange">
+  <van-tab title="未接单" name="a">
+  <!-- 这部分是接单前 -->
+<view class="page__bd" wx:for="{{info}}" wx:key>
+		<view class="weui-form-preview">
+			<view class="weui-form-preview__hd">
+				<label class="weui-form-preview__label">取货码</label>
+				<em class="weui-form-preview__value">{{item.code}}</em>
+			</view>
+			<view class="weui-form-preview__bd">
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">配送员</label>
+					<text class="weui-form-preview__value">{{item.peiname}}</text>
+				</view>
+				<view class="weui-form-preview__item" catchtap="tells" data-tell="{{item.peitell}}">
+					<label class="weui-form-preview__label">联系电话</label>
+					<text class="weui-form-preview__value">{{item.peitell}}</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">送达地点</label>
+					<text class="weui-form-preview__value">{{item.address}}</text>
+				</view>
+        		<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">快递类型</label>
+					<text class="weui-form-preview__value">{{item.kuaidi}}</text>
+				</view>
+				<!--<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">支付费用</label>
+					<text class="weui-form-preview__value">{{item.cost}}</text>
+				</view>
+        -->
+				<!-- <view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">标题标题</label>
+					<text class="weui-form-preview__value">很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字</text>
+				</view> -->
+			</view>
+			<view class="weui-form-preview__ft">
+				<a class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap="quxiao" data-id="{{item._id}}">取消订单</a>
+			</view>
+		</view>
+	</view>
+    </van-tab>
+   <van-tab title="已接单" name="b">
+   <!-- 这部分是接单后，区别是按钮不同，一个是接单，一个是完成 -->
+<view class="page__bd" wx:for="{{info1}}" wx:key>
+		<view class="weui-form-preview">
+			<view class="weui-form-preview__hd">
+				<label class="weui-form-preview__label">取货码</label>
+				<em class="weui-form-preview__value">{{item.code}}</em>
+			</view>
+			<view class="weui-form-preview__bd">
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">配送员</label>
+					<text class="weui-form-preview__value">{{item.peiname}}</text>
+				</view>
+				<view class="weui-form-preview__item" catchtap="tells" data-tell="{{item.peitell}}">
+					<label class="weui-form-preview__label">联系电话</label>
+					<text class="weui-form-preview__value">{{item.peitell}}</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">送达地点</label>
+					<text class="weui-form-preview__value">{{item.address}}</text>
+				</view>
+        		<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">快递类型</label>
+					<text class="weui-form-preview__value">{{item.kuaidi}}</text>
+				</view>
+				<!--<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">支付费用</label>
+					<text class="weui-form-preview__value">{{item.cost}}</text>
+				</view>-->
+				<!-- <view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">标题标题</label>
+					<text class="weui-form-preview__value">很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字</text>
+				</view> -->
+			</view>
+		
+		</view>
+	</view>
+   </van-tab>
+    <van-tab title="已完成" name="c">
+    <!-- 这部分是接单后，区别是按钮不同，一个是接单，一个是完成 -->
+<view class="page__bd" wx:for="{{info2}}" wx:key>
+		<view class="weui-form-preview">
+			<view class="weui-form-preview__hd">
+				<label class="weui-form-preview__label">取货码</label>
+				<em class="weui-form-preview__value">{{item.code}}</em>
+			</view>
+			<view class="weui-form-preview__bd">
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">配送员</label>
+					<text class="weui-form-preview__value">{{item.peiname}}</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label" catchtap="tells" data-tell="{{item.peitell}}">联系电话</label>
+					<text class="weui-form-preview__value">{{item.peitell}}</text>
+				</view>
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">送达地点</label>
+					<text class="weui-form-preview__value">{{item.address}}</text>
+				</view>
+        		<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">快递类型</label>
+					<text class="weui-form-preview__value">{{item.kuaidi}}</text>
+				</view>
+        <!-->
+				<view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">支付费用</label>
+					<text class="weui-form-preview__value">{{item.cost}}</text>
+				</view>
+        -->
+				<!-- <view class="weui-form-preview__item">
+					<label class="weui-form-preview__label">标题标题</label>
+					<text class="weui-form-preview__value">很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字</text>
+				</view> -->
+			</view>
+	
+		</view>
+	</view>
+
+         </van-tab>
+</van-tabs>

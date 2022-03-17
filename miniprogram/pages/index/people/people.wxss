@@ -1,0 +1,5 @@
+/* pages/index/people/people.wxss */
+.weui-form-preview{margin-bottom:0px}
+page{
+  background: white
+}

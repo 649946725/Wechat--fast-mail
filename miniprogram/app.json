@@ -1,0 +1,18 @@
+{
+  "pages": [
+"pages/text/text",
+    "pages/index/index",
+    "pages/index/form/form",
+    "pages/index/order/order",
+    "pages/index/people/people",
+    "pages/index/success/success"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "山农速达",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

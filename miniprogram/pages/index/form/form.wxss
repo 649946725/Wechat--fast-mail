@@ -1,0 +1,3 @@
+/* pages/index/form/form.wxss */
+.page{height:100%}.weui-label{width:4.1em}
+.page{background-color:var(--weui-BG-2)}

@@ -1,0 +1,108 @@
+<view class="page" data-weui-theme="{{theme}}">
+	<view class="weui-form">
+		<view class="weui-form__text-area">
+			<h2 class="weui-form__title">下单界面</h2>
+			<view class="weui-form__desc">请根据快递提示短信，填写您的<text style="color:red;">取货码</text>以及收货人手机尾号。</view>
+
+		</view>
+    <form bindsubmit="info">
+		<view class="weui-form__control-area">
+			<view class="weui-cells__group weui-cells__group_form">
+				<view class="weui-cells__title">下单信息</view>
+				<view class="weui-cells weui-cells_form">
+					<view class="weui-cell weui-cell_active">
+						<view class="weui-cell__hd"><label class="weui-label">姓名</label></view>
+						<view class="weui-cell__bd">
+							<input class="weui-input" placeholder="填写本人姓名" placeholder-class="weui-input__placeholder" name="name" value="{{name}}" />
+						</view>
+					</view>
+					<view class="weui-cell weui-cell_active">
+						<view class="weui-cell__hd">
+							<label class="weui-label">取货码</label>
+						</view>
+						<view class="weui-cell__bd">
+							<input class="weui-input" placeholder="如：55-4-6032" placeholder-class="weui-input__placeholder" name="code" value="{{code}}" />
+						</view>
+					</view>
+					<view class="weui-cell weui-cell_active">
+						<view class="weui-cell__hd">
+							<label class="weui-label">联系电话</label>
+						</view>
+						<view class="weui-cell__bd">
+							<input class="weui-input" placeholder="填写本人电话号码" type="number" placeholder-class="weui-input__placeholder" name="tell" value="{{tell}}" maxlength="11"/>
+						</view>
+					</view>
+					<view class="weui-cell weui-cell_active">
+						<view class="weui-cell__hd">
+							<label class="weui-label">送达地点</label>
+						</view>
+						<view class="weui-cell__bd">
+							<input class="weui-input" placeholder="如：19号楼" type="text" placeholder-class="weui-input__placeholder" name="address" value="{{address}}" />
+						</view>
+					</view>
+					<view class="weui-cell weui-cell_active weui-cell_switch">
+						<view class="weui-cell__bd">小件</view>
+						<view class="weui-cell__ft">
+             <checkbox-group name="type">
+							<label class="weui-switch-cp">
+       <checkbox value="小件" class="weui-switch-cp__input" checked="false" ></checkbox>  
+								<view class="weui-switch-cp__box"></view>
+							</label>
+              </checkbox-group>
+						</view>
+					</view>
+          <view class="cu-bar bg-white" style="width:90%;margin:0 auto;">
+		<view class="action text-black" style="font-size:35rpx;">
+			上传一卡通照片
+		</view>
+		<view class="action" style="margin-right:60rpx;margin-top:5rpx;">
+			{{imgList.length}}/2
+		</view>
+	</view>
+	<view class="cu-form-group" style="width:90%;margin:0 auto;">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+				</view>
+			</view>
+		</view>
+		<view class="weui-form__tips-area">
+			<view class="weui-form__tips">
+				请确认下单信息无误
+			</view>
+			<view class="weui-form__tips">
+				<!--小件代取2元，大件代取5元-->
+			</view>
+		</view>
+
+		<view class="weui-form__opr-area" >
+		 <button class="weui-btn" type="primary" formType="submit">确定</button>
+		</view>
+
+</form>
+		<view class="weui-form__tips-area">
+			<!-- 这是一个可以写信息的地方，暂时不写 -->
+			<view class="weui-form__tips">
+
+			</view>
+		</view>
+		<view class="weui-form__extra-area">
+			<view class="weui-footer">
+				<view class="weui-footer__links">
+					<a href="javascript:" class="weui-footer__link">石头工作室</a>
+				</view>
+				<view class="weui-footer__text">Copyright © 2019-2020 山西百创新兴软件有限公司</view>
+			</view>
+		</view>
+	</view>
+</view>
+

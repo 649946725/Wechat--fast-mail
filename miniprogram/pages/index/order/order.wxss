@@ -1,0 +1,5 @@
+/* pages/index/order/order.wxss */
+.weui-form-preview{margin-bottom:0px}
+page{
+  background: white
+}

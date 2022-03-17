@@ -1,0 +1,25 @@
+<view class="page" data-weui-theme="{{theme}}">
+	<view class="weui-msg">
+		<view class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></view>
+		<view class="weui-msg__text-area">
+			<h2 class="weui-msg__title">操作成功</h2>
+			<view class="weui-msg__desc">我们将尽快为您安排配送人员进行配送，请您耐心等待</view>
+		</view>
+		<view class="weui-msg__opr-area">
+			<view class="weui-btn-area" bindtap="dingdan">
+				<a href="javascript:history.back();" class="weui-btn weui-btn_primary" bindtap="souquan">确定</a>
+			</view>
+		</view>
+		<view class="weui-msg__tips-area">
+			<view class="weui-msg__tips">提示详情，请勿在未告知配送人员的情况下取消订单，否则将列入黑名单</view>
+		</view>
+		<view class="weui-msg__extra-area">
+			<view class="weui-footer">
+				<view class="weui-footer__links" >
+					<a class="weui-footer__link">石头工作室</a>
+				</view>
+				<view class="weui-footer__text">Copyright &copy; 2019-2020 山西百创新兴软件有限公司</view>
+			</view>
+		</view>
+	</view>
+</view>
